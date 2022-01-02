@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:myntraclone/feature/categories/categories.dart';
+import 'package:myntraclone/feature/home_page/home_page.dart';
+import 'package:myntraclone/feature/profile/profile.dart';
 import 'package:myntraclone/foundation/sp_icon/sp_icon.dart';
 
 class LandingPage extends StatefulWidget {
@@ -10,6 +13,11 @@ class LandingPage extends StatefulWidget {
 
 class _LandingPageState extends State<LandingPage> {
   int current_index = 0;
+  List<Widget> pages = [
+    const HomePage(),
+    const Categories(),
+    const Profile(),
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -49,6 +57,7 @@ class _LandingPageState extends State<LandingPage> {
           ),
         ],
       ),
+      body: pages[current_index],
     );
   }
 }
