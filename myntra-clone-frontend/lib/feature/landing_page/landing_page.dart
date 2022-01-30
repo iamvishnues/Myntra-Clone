@@ -37,6 +37,7 @@ class _LandingPageState extends State<LandingPage> {
               assetName: "logo-black.png",
               index: 0,
               currentIndex: current_index,
+              isSelected: 0 == current_index,
             ),
           ),
           BottomNavigationBarItem(
@@ -45,6 +46,7 @@ class _LandingPageState extends State<LandingPage> {
               assetName: "categories.png",
               index: 1,
               currentIndex: current_index,
+              isSelected: 1 == current_index,
             ),
           ),
           BottomNavigationBarItem(
@@ -53,6 +55,7 @@ class _LandingPageState extends State<LandingPage> {
               assetName: "profile.png",
               index: 2,
               currentIndex: current_index,
+              isSelected: 2 == current_index,
             ),
           ),
         ],
