@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:myntraclone/feature/login/login_bottomsheet.dart';
 
 class Categories extends StatefulWidget {
   const Categories({Key? key}) : super(key: key);
@@ -12,7 +13,8 @@ class _CategoriesState extends State<Categories> {
   Widget build(BuildContext context) {
     return const Scaffold(
       body: Center(
-        child: Text("Categories Page"),
+        // child: Text("Categories Page"),
+        child: SafeArea(child: LoginBottomSheet()),
       ),
     );
   }
