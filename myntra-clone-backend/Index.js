@@ -1,6 +1,5 @@
 const express = require("express");
 const mongoose = require("mongoose");
-
 const port = process.env.port || 5000;
 const app = express();
 
@@ -18,6 +17,10 @@ connection.once("open", () => {
 app.route("/").get((req, res) => {
   res.json("Server is up");
 });
+
+//middleware
+const loginRoutes = require("./routes/login.routes");
+app.use("/login", loginRoutes);
 
 app.listen(port, () => {
   console.log("Server Running", port);
