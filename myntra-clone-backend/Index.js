@@ -14,6 +14,7 @@ connection.once("open", () => {
   console.log("DB Connected");
 });
 
+app.use(express.json());
 app.route("/").get((req, res) => {
   res.json("Server is up");
 });
