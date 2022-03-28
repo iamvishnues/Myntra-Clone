@@ -13,8 +13,8 @@ class _CategoriesState extends State<Categories> {
   Widget build(BuildContext context) {
     return const Scaffold(
       body: Center(
-        // child: Text("Categories Page"),
-        child: SafeArea(child: LoginBottomSheet()),
+        child: Text("Categories Page"),
+        // child: SafeArea(child: LoginBottomSheet()),
       ),
     );
   }

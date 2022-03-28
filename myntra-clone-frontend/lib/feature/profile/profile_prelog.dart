@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:myntraclone/feature/login/login_bottomsheet.dart';
 import 'package:myntraclone/feature/profile/profile_content.dart';
 import 'package:myntraclone/foundation/profileitem/profile_item.dart';
+import 'package:myntraclone/foundation/sp_solid_button/sp_solid_button.dart';
 import 'package:myntraclone/foundation/theme/colors.dart';
 
 class ProfilePreLog extends StatelessWidget {
@@ -46,18 +49,13 @@ class ProfilePreLog extends StatelessWidget {
               Positioned(
                   bottom: 22,
                   left: 170,
-                  child: ElevatedButton(
-                      onPressed: () {},
-                      style: ButtonStyle(
-                          backgroundColor:
-                              MaterialStateProperty.all(AppColor.btnColor),
-                          textStyle: MaterialStateProperty.all(const TextStyle(
-                              fontSize: 12, fontWeight: FontWeight.w600))),
-                      child: Container(
-                          width: MediaQuery.of(context).size.width - 210,
-                          height: 45,
-                          child:
-                              const Center(child: Text("LOG IN / SIGN UP")))))
+                  child: SPSolidButton(
+                    text: "LOGIN/ SIGN UP",
+                    minusWidth: 210,
+                    onPressed: () {
+                      Get.bottomSheet(LoginBottomSheet());
+                    },
+                  ))
             ],
           ),
         ),
@@ -67,12 +65,15 @@ class ProfilePreLog extends StatelessWidget {
         Container(
             color: AppColor.whiteColor,
             child: Column(
-              children: const [
+              children: [
                 ProfileItem(
                   title: "Orders",
                   subtitle: "Check your order status",
                   assetName: "orders.png",
                   isLast: false,
+                  onTap: () {
+                    Get.bottomSheet(LoginBottomSheet());
+                  },
                 ),
                 ProfileItem(
                   title: "Help Center",

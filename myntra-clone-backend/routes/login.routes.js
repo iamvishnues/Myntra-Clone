@@ -45,7 +45,7 @@ router.route("/").post((req, res) => {
 
 const sendToken = (mobileNo, msg, res) => {
   let token = jwt.sign({ mobileNo: mobileNo }, process.env.signKey);
-  return res.json({ token: token, message: "success" });
+  return res.json({ token: token, message: msg });
 };
 
 module.exports = router;

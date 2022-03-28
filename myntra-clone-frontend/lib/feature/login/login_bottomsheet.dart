@@ -1,6 +1,7 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:myntraclone/foundation/sp_solid_button/sp_solid_button.dart';
 import 'package:myntraclone/foundation/theme/colors.dart';
 
@@ -26,7 +27,9 @@ class LoginBottomSheet extends StatelessWidget {
                     width: 45,
                   ),
                   IconButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Get.back();
+                    },
                     icon: Icon(Icons.clear, size: 30),
                   )
                 ],
@@ -115,7 +118,10 @@ class LoginBottomSheet extends StatelessWidget {
               const SizedBox(
                 height: 20,
               ),
-              SPSolidButton(text: "CONTINUE"),
+              SPSolidButton(
+                text: "CONTINUE",
+                minusWidth: 1,
+              ),
               const SizedBox(
                 height: 20,
               ),
