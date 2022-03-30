@@ -6,8 +6,10 @@ import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 class NetworkHandler {
   static final Client = http.Client();
   static final storage = FlutterSecureStorage();
-  static void post(var body, String endpoint) async {
-    var response = await Client.post(buildUrl(endpoint), body: body);
+  static Future<String> post(var body, String endpoint) async {
+    var response = await Client.post(buildUrl(endpoint),
+        body: body, headers: {"Content-type": "application/json"});
+    return response.body;
   }
 
   static buildUrl(String endpoint) {

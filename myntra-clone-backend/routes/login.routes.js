@@ -10,7 +10,7 @@ router.route("/").get((req, res) => {
 });
 
 router.route("/").post((req, res) => {
-  console.log("wrhbk");
+  console.log(req.body);
 
   User.findOne(
     {
@@ -24,19 +24,21 @@ router.route("/").post((req, res) => {
           console.log("login");
           sendToken(req.body.mobileNo, "logged in sucesfuly", res);
         } else {
-          console.log("register");
-          const user = new User({
-            mobileNo: req.body.mobileNo,
-          });
-          user
-            .save()
-            .then(() => {
-              sendToken(req.body.mobileNo, "Registered sucessfuly", res);
-            })
-            .catch((e) => {
-              console.log(e);
-            });
+          //   console.log("register");
+          //   const user = new User({
+          //     mobileNo: req.body.mobileNo,
+          //   });
+          //   user
+          //     .save()
+          //     .then(() => {
+          //       sendToken(req.body.mobileNo, "Registered sucessfuly", res);
+          //     })
+          //     .catch((e) => {
+          //       console.log(e);
+          //     });
+          res.json({ msg: "register" });
         }
+
         // return res.status(200).json("success");
       }
     }
