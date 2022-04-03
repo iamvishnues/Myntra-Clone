@@ -3,10 +3,13 @@ import 'package:myntraclone/foundation/theme/colors.dart';
 
 class SPSolidButton extends StatelessWidget {
   const SPSolidButton(
-      {Key? key, required this.text, this.onPressed, required this.minusWidth})
+      {Key? key,
+      required this.text,
+      required this.onPressed,
+      required this.minusWidth})
       : super(key: key);
   final String text;
-  final Function()? onPressed;
+  final Function() onPressed;
   final int minusWidth;
   @override
   Widget build(BuildContext context) {
