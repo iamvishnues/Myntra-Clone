@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:myntraclone/foundation/gender_button/gender_button.dart';
 import 'package:myntraclone/foundation/sp_solid_button/sp_solid_button.dart';
 import 'package:myntraclone/foundation/sp_text_field/sp_text_field.dart';
 
@@ -9,6 +10,21 @@ class Register extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.white,
+        elevation: 0,
+        title: Text(
+          "Complete Regestration",
+          style: TextStyle(fontSize: 20, color: Colors.black),
+        ),
+        leading: IconButton(
+          onPressed: () {},
+          icon: Icon(
+            Icons.arrow_back,
+            color: Colors.black,
+          ),
+        ),
+      ),
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
@@ -16,6 +32,40 @@ class Register extends StatelessWidget {
             key: formKey,
             child: Column(
               children: [
+                SizedBox(
+                  height: 20,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          "Mobile Number",
+                          style: TextStyle(fontSize: 14, color: Colors.black54),
+                        ),
+                        SizedBox(
+                          height: 5,
+                        ),
+                        Text(
+                          "919480530326",
+                          style: TextStyle(
+                              fontSize: 16, fontWeight: FontWeight.w600),
+                        )
+                      ],
+                    ),
+                    Center(
+                        child: Icon(
+                      Icons.verified,
+                      size: 18,
+                      color: Colors.blue,
+                    ))
+                  ],
+                ),
+                SizedBox(
+                  height: 20,
+                ),
                 SafeArea(
                     child: SPTextFormField(
                   labelText: "Create Password *",
@@ -26,6 +76,9 @@ class Register extends StatelessWidget {
                     return null;
                   },
                 )),
+                SizedBox(
+                  height: 15,
+                ),
                 SafeArea(
                     child: SPTextFormField(
                   labelText: "Full Name *",
@@ -36,6 +89,9 @@ class Register extends StatelessWidget {
                     return null;
                   },
                 )),
+                SizedBox(
+                  height: 15,
+                ),
                 SafeArea(
                     child: SPTextFormField(
                   labelText: "Email *",
@@ -46,6 +102,13 @@ class Register extends StatelessWidget {
                     return null;
                   },
                 )),
+                SizedBox(
+                  height: 15,
+                ),
+                GenderButton(),
+                SizedBox(
+                  height: 15,
+                ),
                 SafeArea(
                     child: SPTextFormField(
                   labelText: "Alternate Mobile ",
@@ -68,7 +131,7 @@ class Register extends StatelessWidget {
                   ),
                 )),
                 SizedBox(
-                  height: 15,
+                  height: 25,
                 ),
                 SPSolidButton(
                   text: "CREATE ACCOUNT",

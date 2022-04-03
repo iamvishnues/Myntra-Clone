@@ -9,6 +9,7 @@ import 'package:myntraclone/service/network_handler/network_handler.dart';
 class LoginController extends GetxController {
   TextEditingController loginEditingController = TextEditingController();
   void login() async {
+    Get.to(Register());
     LoginModel loginModel = LoginModel(mobileNo: loginEditingController.text);
     print(loginEditingController.text);
     var response =
